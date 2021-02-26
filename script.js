@@ -1,12 +1,30 @@
-//Add Row
-function addR() { 
-    alert("Clicked Add Row")
-}
+let rowCount = 0;
+let colCount = 0;
 
-//Add Column 
+// Adds a Row to the grid-table
+function addR() {
+    let table = document.getElementById('grid');
+    let row = document.createElement('tr');
+
+    for(let i = 0; i <= colCount; ++i) {
+        let cell = document.createElement('td');
+        row.append(cell);
+    }
+
+    table.appendChild(row);
+    ++rowCount;
+};
+
+// Adds a Column to the grid-table 
 function addC() {
-    alert("Clicked Add Col")
-}
+    let table = document.getElementById('grid');
+
+    for(const row of table.rows) {
+        let cell = document.createElement('td');
+        row.append(cell);
+    }
+    ++colCount;
+};
 
 //Remove Row 
 function removeR() { 

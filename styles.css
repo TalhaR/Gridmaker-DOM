@@ -1,0 +1,13 @@
+body {
+    background-color: gray;
+}
+
+tr, td {
+    border: 1px solid black;
+}
+
+td {
+    height: 50px;
+    width: 50px;
+    background-color: white;
+}
