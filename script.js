@@ -42,7 +42,11 @@ function removeR() {
 
 //Remove Col 
 function removeC() { 
-    document.getElementById('grid').remove();
+    let table = document.getElementById('grid');
+    for(const row of table.rows){
+        row.getElementsByTagName('td')[colCount].remove();
+    }
+    colCount--;
 }
 
 //Fill Rows and Cols Uncolored
