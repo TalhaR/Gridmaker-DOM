@@ -86,6 +86,5 @@ function changeColor() {
 //sets global var for selected color
 function selected() { 
     colorSelected = document.getElementById("selectedID").value;
-    //console.log(colorSelected);
 }
 
