@@ -28,15 +28,7 @@ function addC() {
 
 //Remove Row 
 function removeR() { 
-    //let table = document.getElementById('grid');
-    //let row = document.getElementsByTagName('tr');
-    //console.log(row);
     document.getElementById('grid').deleteRow(rowCount-1);
-    /*for(i = rowCount-1; i >= 0; i--){
-        let cell = document.getElementsByTagName('td');
-        //row.removeChild(cell);
-    }*/
-    //table.removeChild(row);
     rowCount--;
 };
 
