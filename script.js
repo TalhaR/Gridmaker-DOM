@@ -10,6 +10,7 @@ function addR() {
     for(let i = 0; i <= colCount; ++i) {
         let cell = document.createElement('td');
         cell.onclick = changeColor;
+        cell.style.backgroundColor = "white";
         row.append(cell);
     }
 
@@ -24,6 +25,7 @@ function addC() {
     for(const row of table.rows) {
         let cell = document.createElement('td');
         cell.onclick = changeColor;
+        cell.style.backgroundColor = "white";
         row.append(cell);
     }
     ++colCount;
@@ -46,12 +48,24 @@ function removeC() {
 
 //Fill Rows and Cols Uncolored
 function fillU() { 
-    alert("Clicked Fill All Uncolored")
+    let table = document.getElementById('grid');
+    for(const row of table.rows){
+        for(let i = 0; i <= colCount; i++){
+            if (row.getElementsByTagName('td')[i].style.backgroundColor === "white"){
+                row.getElementsByTagName('td')[i].style.backgroundColor = colorSelected;
+            }
+        }
+    }
 }
 
 //Fill Rows and Cols 
 function fill() { 
-    alert("Clicked Fill All")
+    let table = document.getElementById('grid');
+    for(const row of table.rows){
+        for(let i = 0; i <= colCount; i++){
+            row.getElementsByTagName('td')[i].style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 //Clear all Rows and Cols 
@@ -67,6 +81,6 @@ function changeColor() {
 //sets global var for selected color
 function selected() { 
     colorSelected = document.getElementById("selectedID").value;
-    console.log(colorSelected);
+    //console.log(colorSelected);
 }
 
