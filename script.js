@@ -1,5 +1,6 @@
 let rowCount = 0;
 let colCount = 0;
+let colorSelected;
 
 // Adds a Row to the grid-table
 function addR() {
@@ -8,6 +9,7 @@ function addR() {
 
     for(let i = 0; i <= colCount; ++i) {
         let cell = document.createElement('td');
+        cell.onclick = changeColor;
         row.append(cell);
     }
 
@@ -21,6 +23,7 @@ function addC() {
 
     for(const row of table.rows) {
         let cell = document.createElement('td');
+        cell.onclick = changeColor;
         row.append(cell);
     }
     ++colCount;
@@ -56,9 +59,14 @@ function clearAll() {
     alert("Clicked Clear All")
 }
 
+//Sets color to whatever color is selected
+function changeColor() {
+    this.style.backgroundColor = colorSelected;
+}
+
 //sets global var for selected color
 function selected() { 
-    colorSelected = document.getElementById("selectedID").nodeValue;
+    colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
 }
 
