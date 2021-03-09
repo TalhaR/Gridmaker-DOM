@@ -70,7 +70,12 @@ function fill() {
 
 //Clear all Rows and Cols 
 function clearAll() {
-    alert("Clicked Clear All")
+    let table = document.getElementById('grid');
+    for(const row of table.rows){
+        for(let i = 0; i <= colCount; i++){
+            row.getElementsByTagName('td')[i].style.backgroundColor = "white";
+        }
+    }
 }
 
 //Sets color to whatever color is selected
